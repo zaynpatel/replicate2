@@ -1,17 +1,12 @@
-!pip install gensim
-!pip install python-Levenshtein
-
 import pandas as pd
 import gensim
 
 df = pd.read_json("reviews_Cell_Phones_and_Accessories_5.json", lines=True)
-df.head()
-
-df.shape
 
 df.reviewText[193321]
 
 gensim.utils.simple_preprocess('Love the polka dots! This is a very thin and lightweight and flexible cover for Galaxy S5.  Very cute case.')
+# was able to see tokens in jupyter when code returned. it removed punctuation and stop words.
 
 review_text = df.reviewText.apply(gensim.utils.simple_preprocess)
 review_text
